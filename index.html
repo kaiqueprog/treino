@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Exercícios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Tabela de Exercícios</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Exercício</th>
+                <th>Séries</th>
+                <th>Repetições</th>
+                <th>Descanso</th>
+                <th>Observação</th>
+                <th>Feito <span class="feitos">0</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pull Ups</td>
+                <td>3 séries</td>
+                <td>5 a 15</td>
+                <td>3 minutos</td>
+                <td></td>
+                <td><input type="checkbox" class="exercicios"></td>
+            </tr>
+            <tr>
+                <td>Pike Push Ups</td>
+                <td>3 séries</td>
+                <td>5 a 15</td>
+                <td>3 minutos</td>
+                <td>Entrou no lugar do Dips</td>
+                <td><input type="checkbox" class="exercicios"></td>
+
+            </tr>
+            <tr>
+                <td>Push Ups (flexões)</td>
+                <td>3 séries</td>
+                <td>5 a 15</td>
+                <td>3 minutos</td>
+                <td></td>
+                <td><input type="checkbox" class="exercicios"></td>
+            </tr>
+            <tr>
+                <td>Barra Australiana</td>
+                <td>3 séries</td>
+                <td>5 a 15</td>
+                <td>3 minutos</td>
+                <td></td>
+                <td><input type="checkbox" class="exercicios"></td>
+            </tr>
+            <tr>
+                <td>Prancha</td>
+                <td>3 séries</td>
+                <td>45 segundos</td>
+                <td>3 minutos</td>
+                <td></td>
+                <td><input type="checkbox" class="exercicios"></td>
+            </tr>
+            <tr>
+                <td>One Leg L-sit</td>
+                <td>4 séries</td>
+                <td>15 segundos</td>
+                <td>3 minutos</td>
+                <td>Totalizando os 60s</td>
+                <td><input type="checkbox" class="exercicios"></td>
+            </tr>
+            <tr>
+                <td>Elevated Hip Thruster</td>
+                <td>3 séries</td>
+                <td>5 a 15</td>
+                <td>3 minutos</td>
+                <td></td>
+                <td><input type="checkbox" class="exercicios"></td>
+
+            </tr>
+            <tr>
+                <td>Meio Toes to Bar</td>
+                <td>3 séries</td>
+                <td>5 a 15</td>
+                <td>3 minutos</td>
+                <td></td>
+                <td><input type="checkbox" class="exercicios"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkboxes = document.querySelectorAll('.exercicios');
+            const feitos = document.querySelector('.feitos');
+            let pontos = 0;
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function () {
+                    if (this.checked) {
+                        pontos += 1; // Adiciona 1 pontos por exercício concluído
+                    } else {
+                        pontos -= 1; // Remove 1 pontos se o exercício for desmarcado
+                    }
+                    feitos.textContent = pontos;
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
